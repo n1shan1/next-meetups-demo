@@ -32,7 +32,7 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: false, // Consider using 'blocking' or 'true' if meetups are frequently updated.
+    fallback: "blocking", // Consider using 'blocking' or 'true' if meetups are frequently updated.
     paths: meetupData.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
     })),
